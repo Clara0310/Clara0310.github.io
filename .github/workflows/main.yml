@@ -4,11 +4,11 @@ on:
   - cron: '0 * * * *'
 jobs:
   check-uptime:
-  runs-on: ubuntu-latest
-  steps:
-   - uses: actions/checkout@v4
-   - name: Check website status
-     run: |
+   runs-on: ubuntu-latest
+   steps:
+    - uses: actions/checkout@v4
+    - name: Check website status
+      run: |
        curl --output /dev/null --silent --head --fail https://Clara0310.github.io/
        if [ $? -ne 0 ]; then
         echo "Website is down"
